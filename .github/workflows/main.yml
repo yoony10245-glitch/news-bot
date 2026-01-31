@@ -1,0 +1,30 @@
+name: 5분 뉴스 알림
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 5분마다 실행 (전세계 시간 기준)
+  workflow_dispatch:      # 수동 실행 버튼 (테스트용)
+
+jobs:
+  run-news-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: 파이썬 설치
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: 라이브러리 설치
+      run: |
+        pip install -r requirements.txt
+
+    - name: 뉴스 검색 및 전송
+      env:
+        NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+        NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+      run: python news_bot.py
