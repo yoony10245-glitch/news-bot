@@ -14,7 +14,7 @@ TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 CHAT_ID = os.environ.get('CHAT_ID')
 
 # ▼▼▼ [여기서 키워드를 수정하시면 됩니다!] ▼▼▼
-KEYWORDS = ["LIGD&A", "LIG넥스원", "날씨"] 
+KEYWORDS = ["LIGD&A", "LIG넥스원", "뉴스"] 
 
 # --- [시간 계산 함수] ---
 def is_recent_news(pubDate_str):
@@ -85,3 +85,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
