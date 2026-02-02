@@ -16,7 +16,7 @@ TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 CHAT_ID = os.environ.get('CHAT_ID') # Secrets에 CHAT_ID도 추가해두셨죠?
 
 # 2. 키워드 (뉴스 등 불필요한 단어 제거)
-KEYWORDS = ["LIG넥스원", "LIGNex1", "LIGD&A"]
+KEYWORDS = ["LIG넥스원", "LIGNex1", "LIGD&A", "날씨"]
 
 # 3. 중복 차단 기준 (70% 이상 같으면 중복)
 SIMILARITY_THRESHOLD = 0.7 
@@ -104,3 +104,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
