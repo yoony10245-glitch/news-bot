@@ -15,7 +15,7 @@ TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 CHAT_ID = os.environ.get('CHAT_ID')
 
 # 1. 키워드 설정
-KEYWORDS = ["LIG넥스원", "LIG Nex1", "LIG D&A", "LIG 디펜스", "방산 수출"]
+KEYWORDS = ["LIG넥스원", "LIGNex1", "LIGD&A"]
 
 # 2. 검색 기간 (최근 60분)
 TIME_LIMIT_MINUTES = 60 
@@ -127,3 +127,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
