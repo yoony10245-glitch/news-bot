@@ -18,8 +18,8 @@ jobs:
         python-version: '3.9'
 
     - name: 라이브러리 설치
-      run: |
-        pip install -r requirements.txt
+        run: |
+          pip install requests beautifulsoup4 python-telegram-bot newspaper3k lxml_html_clean
 
     - name: 뉴스 검색 및 전송
       env:
